@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Basic IOT button</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body bgcolor="black">
+  <button type="green" onclick="green()">Green</button>
+  <button type="black" onclick="black()">Black</button>
+  <button type="white" onclick="white()">White</button>
+  <button type="herbal" onclick="herbal()">Herbal</button>
+
+  <script>
+    var clicks = 0;
+
+    function green() {
+      console.log("Green tea will be done in 2 min 30 sec.");
+      clicks=1;
+      $.post("https://api.particle.io/v1/devices/42002e000447343337373739/brew?access_token=78182b191c23a16e949b48fdfe616bc6f6cc7096", {
+        value: "on"
+      });
+    }
+
+    function black() {
+      console.log("Black tea will be done in 4 min.");
+      clicks=1;
+      $.post("https://api.particle.io/v1/devices/42002e000447343337373739/brew?access_token=78182b191c23a16e949b48fdfe616bc6f6cc7096", {
+        value: "on"
+      });
+    }
+
+    function white() {
+      console.log("White tea will be done in 2 min.");
+      clicks=1;
+      $.post("https://api.particle.io/v1/devices/42002e000447343337373739/brew?access_token=78182b191c23a16e949b48fdfe616bc6f6cc7096", {
+        value: "on"
+      });
+    }
+
+  </script>
+</body>
+
+</html>
